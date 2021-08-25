@@ -45,7 +45,7 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     NGINX_HTTP_PORT_NUMBER="" \
     PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/wp-cli/bin:/opt/bitnami/nginx/sbin:/opt/bitnami/mysql/bin:/opt/bitnami/common/bin:$PATH"
 
-EXPOSE 8181 8143
+EXPOSE 8080 8443
 
 USER 1001
 ENTRYPOINT [ "/opt/bitnami/scripts/wordpress/entrypoint.sh" ]
