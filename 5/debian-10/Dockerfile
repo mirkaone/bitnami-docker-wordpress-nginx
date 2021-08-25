@@ -45,10 +45,7 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     NGINX_HTTP_PORT_NUMBER="" \
     PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/wp-cli/bin:/opt/bitnami/nginx/sbin:/opt/bitnami/mysql/bin:/opt/bitnami/common/bin:$PATH"
 
-## Modify the ports used by NGINX by default
-# It is also possible to change these environment variables at runtime
-ENV NGINX_HTTP_PORT_NUMBER=80
-ENV NGINX_HTTPS_PORT_NUMBER=443
+EXPOSE 8181 8143
 
 USER 1001
 ENTRYPOINT [ "/opt/bitnami/scripts/wordpress/entrypoint.sh" ]
