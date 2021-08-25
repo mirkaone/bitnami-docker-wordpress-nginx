@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "fundacionmezquitadegranada-9df8"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "fundacionmezquitadegranada-9df8"
+  template:
+    metadata:
+      labels:
+        app: "fundacionmezquitadegranada-9df8"
+    spec:
+      containers:
+        - name: "fundacionmezquitadegranada-9df8"
+          image: "mirkaonepruebas.azurecr.io/fundacionmezquitadegranada"
+          ports:
+          - containerPort: 443
