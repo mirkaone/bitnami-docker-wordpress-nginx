@@ -5,9 +5,6 @@ ENV HOME="/" \
     OS_ARCH="amd64" \
     OS_FLAVOUR="debian-10" \
     OS_NAME="linux"
-    
-## Install 'vim'
-RUN install_packages vim
 
 COPY prebuildfs /
 # Install required system packages and dependencies
@@ -32,7 +29,7 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     BITNAMI_IMAGE_VERSION="5.8.0-debian-10-r19" \
     MARIADB_HOST="mariadb" \
     MARIADB_PORT_NUMBER="3306" \
-    MARIADB_ROOT_PASSWORD="bitnami" \
+    MARIADB_ROOT_PASSWORD="" \
     MARIADB_ROOT_USER="root" \
     MYSQL_CLIENT_CREATE_DATABASE_NAME="" \
     MYSQL_CLIENT_CREATE_DATABASE_PASSWORD="" \
