@@ -1,4 +1,4 @@
-# Bitnami Docker Image for WordPress with NGINX
+# Bitnami Docker Image for WordPress with NGINX.
 
 ## What is WordPress with NGINX?
 
