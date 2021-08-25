@@ -28,6 +28,10 @@ RUN /opt/bitnami/scripts/wordpress/postunpack.sh
 ENV ALLOW_EMPTY_PASSWORD="no" \
     BITNAMI_APP_NAME="wordpress-nginx" \
     BITNAMI_IMAGE_VERSION="5.8.0-debian-10-r19" \
+    MARIADB_HOST="mariadb" \
+    MARIADB_PORT_NUMBER="3306" \
+    MARIADB_ROOT_PASSWORD="" \
+    MARIADB_ROOT_USER="root" \
     MYSQL_CLIENT_CREATE_DATABASE_NAME="" \
     MYSQL_CLIENT_CREATE_DATABASE_PASSWORD="" \
     MYSQL_CLIENT_CREATE_DATABASE_PRIVILEGES="ALL" \
@@ -37,6 +41,11 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     NGINX_ENABLE_CUSTOM_PORTS="no" \
     NGINX_HTTPS_PORT_NUMBER="" \
     NGINX_HTTP_PORT_NUMBER="" \
+    WORDPRESS_DATABASE_HOST="sqlfmg.mysql.database.azure.com" \
+    WORDPRESS_DATABASE_PORT_NUMBER="3306" \
+    WORDPRESS_DATABASE_USER="mirkaone@sqlfmg" \
+    WORDPRESS_DATABASE_NAME="bitnami_wordpress" \
+    WORDPRESS_DATABASE_PASSWORD="Pinguino1" \
     PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/wp-cli/bin:/opt/bitnami/nginx/sbin:/opt/bitnami/mysql/bin:/opt/bitnami/common/bin:$PATH"
 
 EXPOSE 8080 8443
