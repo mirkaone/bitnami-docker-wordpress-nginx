@@ -5,6 +5,9 @@ ENV HOME="/" \
     OS_ARCH="amd64" \
     OS_FLAVOUR="debian-10" \
     OS_NAME="linux"
+    
+## Install 'vim'
+RUN install_packages vim
 
 COPY prebuildfs /
 # Install required system packages and dependencies
