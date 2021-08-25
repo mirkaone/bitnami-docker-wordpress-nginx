@@ -32,7 +32,7 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     MARIADB_ROOT_PASSWORD="Pinguino1" \
     MARIADB_ROOT_USER="mirkaone@sqlfmg" \
     MYSQL_CLIENT_CREATE_DATABASE_NAME="bitnami_wordpress" \
-    MYSQL_CLIENT_CREATE_DATABASE_PASSWORD="bitnami" \
+    MYSQL_CLIENT_CREATE_DATABASE_PASSWORD="Pinguino1" \
     MYSQL_CLIENT_CREATE_DATABASE_PRIVILEGES="ALL" \
     MYSQL_CLIENT_CREATE_DATABASE_USER="bn_wordpress" \
     MYSQL_CLIENT_ENABLE_SSL="no" \
@@ -44,7 +44,7 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     WORDPRESS_DATABASE_PORT_NUMBER="3306" \
     WORDPRESS_DATABASE_USER="bn_wordpress" \
     WORDPRESS_DATABASE_NAME="bitnami_wordpress" \
-    WORDPRESS_DATABASE_PASSWORD="bitnami" \
+    WORDPRESS_DATABASE_PASSWORD="Pinguino1" \
     PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/wp-cli/bin:/opt/bitnami/nginx/sbin:/opt/bitnami/mysql/bin:/opt/bitnami/common/bin:$PATH"
 
 EXPOSE 8080 8443
