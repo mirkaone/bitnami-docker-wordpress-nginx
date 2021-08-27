@@ -17,7 +17,5 @@ services:
       - WORDPRESS_DATABASE_NAME=bitnami_wordpress
       - WORDPRESS_DATABASE_PASSWORD=Pinguino1
 volumes:
-  mariadb_data:
-    driver: local
   wordpress_data:
     driver: local
