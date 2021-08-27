@@ -13,7 +13,7 @@ services:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - WORDPRESS_DATABASE_HOST=sqlfmg.mysql.database.azure.com
       - WORDPRESS_DATABASE_PORT_NUMBER=3306
-      - WORDPRESS_DATABASE_USER=mirkaone@sqlfmg
+      - WORDPRESS_DATABASE_USER=bn_wordpress
       - WORDPRESS_DATABASE_NAME=bitnami_wordpress
       - WORDPRESS_DATABASE_PASSWORD=Pinguino1
 volumes:
