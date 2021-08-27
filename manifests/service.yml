@@ -7,9 +7,13 @@ metadata:
 spec:
     type: LoadBalancer
     ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: http
     - port: 80
       targetPort: 80
       protocol: TCP
-      name: http
+      name: http80
     selector:
         app: "fmgkubernetes-c9f0"
