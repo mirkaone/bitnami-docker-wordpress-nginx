@@ -7,8 +7,6 @@ services:
       - '443:8443'
     volumes:
       - 'wordpress_data:/bitnami/wordpress'
-    depends_on:
-      - mariadb
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - WORDPRESS_DATABASE_HOST=sqlfmg.mysql.database.azure.com
