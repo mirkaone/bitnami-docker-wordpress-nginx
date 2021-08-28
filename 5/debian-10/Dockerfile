@@ -52,7 +52,7 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     WORDPRESS_SCHEME="http" \
     PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/wp-cli/bin:/opt/bitnami/nginx/sbin:/opt/bitnami/mysql/bin:/opt/bitnami/common/bin:$PATH"
 
-EXPOSE 80 443
+EXPOSE 80 443 8080 8433
 
 USER 1001
 ENTRYPOINT [ "/opt/bitnami/scripts/wordpress/entrypoint.sh" ]
