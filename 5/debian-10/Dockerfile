@@ -47,7 +47,7 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     WORDPRESS_DATABASE_NAME="bitnami_wordpress" \
     WORDPRESS_HTTPS_PORT="443" \
     WORDPRESS_HTTP_PORT="80" \
-    PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/wp-cli/bin:/opt/bitnami/nginx/sbin:/opt/bitnami/mysql/bin:/opt/bitnami/common/bin:$PATH"
+    PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/php/sbin:/opt/bitnami/wp-cli/bin:/opt/bitnami/nginx/sbin:/opt/bitnami/mysql/bin:/opt/bitnami/nami/bin:$PATH"
 
 EXPOSE 80 443
 
