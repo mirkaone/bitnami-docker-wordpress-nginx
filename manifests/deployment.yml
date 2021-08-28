@@ -16,4 +16,4 @@ spec:
         - name: "fmgkubernetes-c9f0"
           image: "mirkaonepruebas.azurecr.io/fmgkubernetes"
           ports:
-          - containerPort: 8080
+          - containerPort: 80
