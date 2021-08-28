@@ -1,4 +1,4 @@
-FROM bitnami/minideb:stretch
+FROM docker.io/bitnami/minideb:stretch
 LABEL maintainer "Bitnami <containers@bitnami.com>"
 
 ENV PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/php/sbin:/opt/bitnami/wp-cli/bin:/opt/bitnami/nginx/sbin:/opt/bitnami/mysql/bin:/opt/bitnami/nami/bin:$PATH"
