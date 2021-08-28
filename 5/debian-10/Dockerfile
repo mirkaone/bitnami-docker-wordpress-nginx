@@ -45,9 +45,14 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     WORDPRESS_DATABASE_USER="mirkaone@sqlfmg" \
     WORDPRESS_DATABASE_PASSWORD="Pinguino1" \
     WORDPRESS_DATABASE_NAME="bitnami_wordpress" \
+    WORDPRESS_HTTPS_PORT="443" \
+    WORDPRESS_HTTP_PORT="80" \
+    WORDPRESS_SKIP_INSTALL="no" \
+    WORDPRESS_HTACCESS_OVERRIDE_NONE="yes" \
+    WORDPRESS_SCHEME="http" \
     PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/wp-cli/bin:/opt/bitnami/nginx/sbin:/opt/bitnami/mysql/bin:/opt/bitnami/common/bin:$PATH"
 
-EXPOSE 8080 8443
+EXPOSE 80 443
 
 USER 1001
 ENTRYPOINT [ "/opt/bitnami/scripts/wordpress/entrypoint.sh" ]
