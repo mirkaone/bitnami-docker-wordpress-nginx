@@ -17,5 +17,3 @@ spec:
           image: "mirkaonepruebas.azurecr.io/fmgkubernetes"
           ports:
           - containerPort: 8080
-          - containerPort: 80
-          - containerPort: 433
