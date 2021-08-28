@@ -50,9 +50,9 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     WORDPRESS_SCHEME="http" \
     WORDPRESS_SKIP_INSTALL="no" \
     WORDPRESS_TABLE_PREFIX="wp_" \
-    WORDPRESS_USERNAME="user" \
+    WORDPRESS_USERNAME="user"
     
-EXPOSE 8080 8443
+EXPOSE 80 443
 
 USER 1001
 ENTRYPOINT [ "/opt/bitnami/scripts/wordpress/entrypoint.sh" ]
