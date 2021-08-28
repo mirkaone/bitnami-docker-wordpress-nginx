@@ -37,22 +37,13 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     MYSQL_CLIENT_CREATE_DATABASE_USER="bn_wordpress" \
     MYSQL_CLIENT_ENABLE_SSL="no" \
     MYSQL_CLIENT_SSL_CA_FILE="" \
-    WORDPRESS_BLOG_NAME="User's Blog!" \
     WORDPRESS_DATABASE_HOST="sqlfmg.mysql.database.azure.com" \
     WORDPRESS_DATABASE_USER="bn_wordpress" \
     WORDPRESS_DATABASE_PASSWORD="Pinguino1" \
     WORDPRESS_DATABASE_NAME="bitnami_wordpress" \
-    WORDPRESS_EMAIL="user@example.com" \
-    WORDPRESS_FIRST_NAME="FirstName" \
     WORDPRESS_HTACCESS_OVERRIDE_NONE="yes" \
     WORDPRESS_HTTPS_PORT="443" \
     WORDPRESS_HTTP_PORT="80" \
-    WORDPRESS_LAST_NAME="LastName" \
-    WORDPRESS_PASSWORD="bitnami" \
-    WORDPRESS_SCHEME="http" \
-    WORDPRESS_SKIP_INSTALL="no" \
-    WORDPRESS_TABLE_PREFIX="wp_" \
-    WORDPRESS_USERNAME="user" \
     PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/php/sbin:/opt/bitnami/wp-cli/bin:/opt/bitnami/nginx/sbin:/opt/bitnami/mysql/bin:/opt/bitnami/nami/bin:$PATH"
 
 EXPOSE 80 443
