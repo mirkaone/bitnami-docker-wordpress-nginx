@@ -11,13 +11,5 @@ spec:
       targetPort: 8080
       protocol: TCP
       name: http
-    - port: 80
-      targetPort: 80
-      protocol: TCP
-      name: http80
-    - port: 433
-      targetPort: 433
-      protocol: TCP
-      name: https
     selector:
         app: "fmgkubernetes-c9f0"
