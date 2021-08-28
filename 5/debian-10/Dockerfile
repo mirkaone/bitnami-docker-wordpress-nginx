@@ -54,7 +54,7 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     
 
 
-EXPOSE 80 443 8080 8443
+EXPOSE 8080 8443 80 443
 
 USER 1001
 ENTRYPOINT [ "/opt/bitnami/scripts/wordpress/entrypoint.sh" ]
