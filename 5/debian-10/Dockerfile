@@ -1,4 +1,4 @@
-FROM docker.io/bitnami/minideb:stretch
+FROM bitnami/minideb:stretch
 LABEL maintainer "Bitnami <containers@bitnami.com>"
 
 ENV HOME="/" \
@@ -6,25 +6,22 @@ ENV HOME="/" \
     OS_FLAVOUR="debian-10" \
     OS_NAME="linux"
 
-ENV PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/php/sbin:/opt/bitnami/wp-cli/bin:/opt/bitnami/nginx/sbin:/opt/bitnami/mysql/bin:/opt/bitnami/nami/bin:$PATH"
 
 COPY prebuildfs /
 # Install required system packages and dependencies
-RUN install_packages ca-certificates curl dirmngr gnupg libbz2-1.0 libc6 libcomerr2 libcurl3 libffi6 libfreetype6 libgcc1 libgcrypt20 libgeoip1 libgmp10 libgnutls30 libgpg-error0 libgssapi-krb5-2 libhogweed4 libicu57 libidn11 libidn2-0 libjpeg62-turbo libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap-2.4-2 liblzma5 libmemcached11 libmemcachedutil2 libncurses5 libnettle6 libnghttp2-14 libp11-kit0 libpcre3 libpng16-16 libpq5 libpsl5 libreadline7 librtmp1 libsasl2-2 libssh2-1 libssl1.0.2 libssl1.1 libstdc++6 libsybdb5 libtasn1-6 libtidy5 libtinfo5 libunistring0 libxml2 libxslt1.1 libzip4 procps sudo unzip zlib1g
-RUN /build/bitnami-user.sh && \
-    /build/install-nami.sh
-RUN bitnami-pkg unpack php-7.3.13-3 --checksum 88b3115407575a8906043ce9a54968104634b96473bb7493b9a3461b28683a6f
-RUN bitnami-pkg install wp-cli-2.4.0-0 --checksum 3bf68efbc817708e466a6ba32dd8ec46408931c38b7e568c76a7bc2c76319578
-RUN bitnami-pkg unpack nginx-1.16.1-5 --checksum 37288b74d5e7b3a0fdb38454c059fb0cefbaa5d28f04fe0bb5ed9d7526a6b100
-RUN bitnami-pkg unpack mysql-client-10.3.21-0 --checksum 19c6b964f289772a4e5963e22929133fa65222f66752eb29af715ce3d0b7ef0e
-RUN bitnami-pkg unpack wordpress-5.3.2-1 --checksum 77fe90ea8646858aeb9264680209fe585d34d9d1523b7b154c956283637458b6
+RUN install_packages vim ca-certificates curl dirmngr gnupg libbz2-1.0 libc6 libcomerr2 libcurl3 libffi6 libfreetype6 libgcc1 libgcrypt20 libgeoip1 libgmp10 libgnutls30 libgpg-error0 libgssapi-krb5-2 libhogweed4 libicu57 libidn11 libidn2-0 libjpeg62-turbo libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap-2.4-2 liblzma5 libmemcached11 libmemcachedutil2 libncurses5 libnettle6 libnghttp2-14 libp11-kit0 libpcre3 libpng16-16 libpq5 libpsl5 libreadline7 librtmp1 libsasl2-2 libssh2-1 libssl1.0.2 libssl1.1 libstdc++6 libsybdb5 libtasn1-6 libtidy5 libtinfo5 libunistring0 libxml2 libxslt1.1 libzip4 procps sudo unzip zlib1g
+RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "php" "7.4.22-2" --checksum 0e54327672e6a12d6b5af92fcefaeacc7ec149d9a9433d6ab08796ffdcf32a43
+RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "wp-cli" "2.5.0-0" --checksum b2be17e2065fc8d9d1a175e1dbc689e8f6a5543bb3b6a6f5470bc987b7c396ce
+RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "nginx" "1.21.1-0" --checksum 34775d31ba2edb6bf4e84e049ac932017713a310e69905858cd1e0f3ad4f4947
+RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "mysql-client" "10.3.31-0" --checksum 92b99c64a3ffe10fd94ef9ecd94d2dd65a172404c726093eb50b3b293523559d
+RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "wordpress" "5.8.0-5" --checksum 1f6f177bdba5f7bd309999e830177553afb886f1b8346681cf78ff4ac71a7e9e
+RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "render-template" "1.0.0-3" --checksum 8179ad1371c9a7d897fe3b1bf53bbe763f94edafef19acad2498dd48b3674efe
+RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "gosu" "1.14.0-0" --checksum 3e6fc37ca073b10a73a804d39c2f0c028947a1a596382a4f8ebe43dfbaa3a25e
 RUN apt-get update && apt-get upgrade && \
     rm -r /var/lib/apt/lists /var/cache/apt/archives
-RUN /build/install-gosu.sh
 RUN ln -sf /dev/stdout /opt/bitnami/nginx/logs/access.log
 RUN ln -sf /dev/stderr /opt/bitnami/nginx/logs/error.log
 RUN /build/install-tini.sh
-
 
 COPY rootfs /
 ENV ALLOW_EMPTY_PASSWORD="no" \
@@ -56,9 +53,11 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     WORDPRESS_SCHEME="http" \
     WORDPRESS_SKIP_INSTALL="no" \
     WORDPRESS_TABLE_PREFIX="wp_" \
-    WORDPRESS_USERNAME="user"
-    
+    WORDPRESS_USERNAME="user" \
+    PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/php/sbin:/opt/bitnami/wp-cli/bin:/opt/bitnami/nginx/sbin:/opt/bitnami/mysql/bin:/opt/bitnami/nami/bin:$PATH"
+
 EXPOSE 80 443
 
-ENTRYPOINT [ "/app-entrypoint.sh" ]
-CMD [ "/run.sh" ]
+USER 1001
+ENTRYPOINT [ "/opt/bitnami/scripts/wordpress/entrypoint.sh" ]
+CMD [ "/opt/bitnami/scripts/nginx-php-fpm/run.sh" ]
